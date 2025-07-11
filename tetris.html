@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テトリス</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #222;
+            font-family: Arial, sans-serif;
+        }
+        .game-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        canvas {
+            border: 2px solid #fff;
+            background-color: #111;
+        }
+        .info-panel {
+            color: white;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            min-width: 200px;
+        }
+        .info-panel h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+        .info-panel p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .controls {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .game-over {
+            color: #ff6b6b;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+        <div class="info-panel">
+            <h2>テトリス</h2>
+            <p>スコア: <span id="score">0</span></p>
+            <p>ライン: <span id="lines">0</span></p>
+            <p>レベル: <span id="level">1</span></p>
+            <div class="controls">
+                <h3>操作方法:</h3>
+                <p>← → : 移動</p>
+                <p>↓ : 落下速度アップ</p>
+                <p>↑ : 回転</p>
+                <p>スペース : 一気に落下</p>
+            </div>
+            <button id="startButton" onclick="startGame()">ゲーム開始</button>
+            <div id="gameOver" class="game-over" style="display: none;">ゲームオーバー</div>
+        </div>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+</html>
